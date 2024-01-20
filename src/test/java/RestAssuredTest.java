@@ -63,7 +63,6 @@ public class RestAssuredTest {
                 .log().body()
                 .statusCode(400)
                 .body("error", is("Missing email or username"));
-        ;
     }
 
     @Test
@@ -83,7 +82,7 @@ public class RestAssuredTest {
                 .log().body()
                 .statusCode(400)
                 .body("error", is("Missing password"));
-        ;
+
     }
 
     @Test
