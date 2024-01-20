@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.gmail.igor763763763'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            'org.junit.jupiter:junit-jupiter:5.10.1',
+            'io.rest-assured:rest-assured:5.4.0'
+    )
+}
+
+test {
+    useJUnitPlatform()
+}
