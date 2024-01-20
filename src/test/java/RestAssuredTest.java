@@ -1,8 +1,10 @@
 import org.junit.jupiter.api.Test;
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.get;
+import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.hasItems;
+import static org.hamcrest.Matchers.is;
 
 public class RestAssuredTest {
 
@@ -85,7 +87,7 @@ public class RestAssuredTest {
     }
 
     @Test
-    void missingRegister() {
+    void UnsuccessfulRegistration() {
         String credentials = "{\"password\": \"sadds\"}";
 
         given()
@@ -101,7 +103,7 @@ public class RestAssuredTest {
                 .log().body()
                 .statusCode(400)
                 .body("error", is("Missing email or username"));
-        ;
+
     }
 
 }
