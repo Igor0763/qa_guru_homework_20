@@ -72,7 +72,7 @@ public class RestAssuredTest extends TestBases {
                         .post()
 
                         .then()
-                        .spec(missingPasswordResponseSpec)
+                        .spec(missingRequiredRespSpec)
                         .extract().as(MissingPasswordOrUserName.class));
         step("Check response", () ->
                 assertEquals("Missing email or username", response.getError()));
@@ -91,7 +91,7 @@ public class RestAssuredTest extends TestBases {
                         .post()
 
                         .then()
-                        .spec(missingPasswordResponseSpec)
+                        .spec(missingRequiredRespSpec)
                         .extract().as(MissingPasswordOrUserName.class));
         step("Check response", () ->
                 assertEquals("Missing password", response.getError()));
@@ -111,7 +111,7 @@ public class RestAssuredTest extends TestBases {
                         .post()
 
                         .then()
-                        .spec(missingEmailResponseSpec)
+                        .spec(missingRequiredRespSpec)
                         .extract().as(MissingPasswordOrUserName.class));
         step("Check response", () ->
                 assertEquals("Missing email or username", response.getError()));
